@@ -7,7 +7,7 @@ export const PlayList = styled.div`
   width: 80%;
   height: 150px;
   border-bottom: 2px solid #3b28cc;
-  margin: 14px 0px;
+  padding: 10px 0px;
 `;
 
 export const Shortcut = styled.span`
@@ -23,14 +23,6 @@ export const Shortcut = styled.span`
   transition: 0.3s ease-in-out;
 `;
 
-export const ImgBox = styled.div`
-  position: relative;
-  height: 85%;
-  &:hover ${Shortcut} {
-    opacity: 1;
-  }
-`;
-
 export const Img = styled.img`
   height: 100%;
   padding-right: 10px;
@@ -38,7 +30,15 @@ export const Img = styled.img`
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   cursor: pointer;
-  &:hover {
+`;
+
+export const ImgBox = styled.div`
+  position: relative;
+  height: 85%;
+  &:hover ${Shortcut} {
+    opacity: 1;
+  }
+  &:hover ${Img} {
     opacity: 0.3;
   }
 `;

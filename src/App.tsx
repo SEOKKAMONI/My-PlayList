@@ -1,6 +1,13 @@
 import React from 'react';
-import MainPage from './Components/MainPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import * as P from './Pages';
 
 export default function App() {
-  return <MainPage />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<P.Main />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

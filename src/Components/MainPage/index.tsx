@@ -9,9 +9,6 @@ export default function MainPage() {
       <Header />
       <S.Content>
         <PlayList />
-        <PlayList />
-        <PlayList />
-        <PlayList />
       </S.Content>
     </S.MainPage>
   );

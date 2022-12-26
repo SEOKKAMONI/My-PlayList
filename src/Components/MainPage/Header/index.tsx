@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <S.Header>
       <S.InnerFrame>
-        <S.Logo>로고</S.Logo>
+        <S.Logo>SharePlayList</S.Logo>
         <AddButton />
       </S.InnerFrame>
     </S.Header>

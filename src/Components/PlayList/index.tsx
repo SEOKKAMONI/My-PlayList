@@ -9,6 +9,7 @@ export default function PlayList() {
       <S.Contents>
         <S.Title>(이수현X최정훈) - 대화가 필요해</S.Title>
         <S.SubTitle>설명 끄적끄적</S.SubTitle>
+        <S.NickName>김석진</S.NickName>
       </S.Contents>
     </S.PlayList>
   );

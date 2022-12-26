@@ -25,7 +25,7 @@ export const Shortcut = styled.span`
 
 export const Img = styled.img`
   height: 100%;
-  padding-right: 10px;
+  margin-right: 10px;
   opacity: 1;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;

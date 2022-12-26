@@ -1,10 +1,14 @@
 import React from 'react';
 import * as S from './style';
+import AddButton from '../../Button/AddButton/index';
 
 export default function Header() {
   return (
-    <S.HeaderFrame>
-      <S.Logo>로고</S.Logo>
-    </S.HeaderFrame>
+    <S.Header>
+      <S.InnerFrame>
+        <S.Logo>로고</S.Logo>
+        <AddButton />
+      </S.InnerFrame>
+    </S.Header>
   );
 }

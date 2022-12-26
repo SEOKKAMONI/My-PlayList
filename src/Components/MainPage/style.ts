@@ -9,6 +9,9 @@ export const MainPage = styled.div`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 50%;
   height: 100%;
   border: 1px solid #e2e2e2;

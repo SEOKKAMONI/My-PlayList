@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useRecoilState } from 'recoil';
 import * as S from './style';
 import { isOpenModalAtom } from '../../Atoms/Atom';
+import TextInput from '../Input/TextInput/index';
 
 export default function Modal() {
   const [isOpenModal, setOpenModal] = useRecoilState<boolean>(isOpenModalAtom);
@@ -17,7 +18,9 @@ export default function Modal() {
         }
       }}
     >
-      <S.Modal>안녕안녕 나는 석진이야</S.Modal>
+      <S.Modal>
+        <TextInput />
+      </S.Modal>
     </S.ModalBackground>
   );
 }

@@ -19,7 +19,6 @@ export const Shortcut = styled.span`
   color: #000;
   font-weight: bold;
   opacity: 0;
-  z-index: 2;
   transition: 0.3s ease-in-out;
 `;
 

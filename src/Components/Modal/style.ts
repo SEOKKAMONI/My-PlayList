@@ -12,9 +12,12 @@ export const ModalBackground = styled.div<{ display: string }>`
 `;
 
 export const Modal = styled.div`
+  display: flex;
+  justify-content: center;
   padding: 2em;
   width: 500px;
   height: 600px;
   border-radius: 24px;
   background-color: #fff;
+  z-index: 1;
 `;

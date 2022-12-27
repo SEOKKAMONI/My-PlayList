@@ -5,7 +5,7 @@ import { isOpenModalAtom } from '../../../Atoms/Atom';
 import * as S from './style';
 
 export default function AddButton() {
-  const setOpenModal = useSetRecoilState(isOpenModalAtom);
+  const setOpenModal = useSetRecoilState<boolean>(isOpenModalAtom);
 
   return (
     <S.AddButton onClick={() => setOpenModal(true)}>

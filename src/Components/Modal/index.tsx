@@ -3,8 +3,8 @@ import * as S from './style';
 
 export default function Modal() {
   return (
-    <S.ModalBackGround>
-      <S.Modal>안녕</S.Modal>
-    </S.ModalBackGround>
+    <S.ModalBackground>
+      <S.Modal>안녕안녕 나는 석진이야</S.Modal>
+    </S.ModalBackground>
   );
 }

@@ -7,7 +7,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<P.Main />} />
-        <Route path="/modal" element={<P.AddPlayList />} />
       </Routes>
     </BrowserRouter>
   );

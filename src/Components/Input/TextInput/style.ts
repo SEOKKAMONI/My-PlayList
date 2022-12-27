@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   align-items: center;
-  border: 1.5px solid #3b28cc;
-  border-radius: 14px;
+  border-bottom: 2px solid #3b28cc;
   width: 350px;
   height: 35px;
 `;

@@ -19,6 +19,9 @@ export default function Modal() {
       }}
     >
       <S.Modal>
+        <S.Title>플레이 리스트 추가</S.Title>
+        <S.Line />
+        <TextInput />
         <TextInput />
       </S.Modal>
     </S.ModalBackground>

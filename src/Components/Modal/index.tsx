@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useRecoilState } from 'recoil';
+import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import { isOpenModalAtom } from '../../Atoms/Atom';
 import TextInput from '../Input/TextInput/index';
@@ -23,6 +24,7 @@ export default function Modal() {
         <S.Line />
         <TextInput />
         <TextInput />
+        <TextArea />
       </S.Modal>
     </S.ModalBackground>
   );

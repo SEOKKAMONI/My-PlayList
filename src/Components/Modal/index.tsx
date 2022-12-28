@@ -23,9 +23,9 @@ export default function Modal() {
       <S.Modal>
         <S.Title>플레이 리스트 추가</S.Title>
         <S.Form>
-          <TextInput />
-          <TextInput />
-          <TextArea />
+          <TextInput placeholder="유튜브 URL을 입력하세요." />
+          <TextInput placeholder="노래 제목을 입력해주세요." />
+          <TextArea placeholder="간단하게 자신의 방법으로 노래를 설명해주세요." />
           <SubmitButton />
         </S.Form>
       </S.Modal>

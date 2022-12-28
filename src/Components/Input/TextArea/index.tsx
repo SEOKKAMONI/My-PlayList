@@ -1,10 +1,14 @@
 import React from 'react';
 import * as S from './style';
 
-export default function TextArea() {
+interface PropsType {
+  placeholder: string;
+}
+
+export default function TextArea({ placeholder }: PropsType) {
   return (
     <S.Frame>
-      <S.Input placeholder="노래에 대한 설명을 적든가 말든가" />
+      <S.Input placeholder={placeholder} />
     </S.Frame>
   );
 }

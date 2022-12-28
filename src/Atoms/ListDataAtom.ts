@@ -10,7 +10,7 @@ export const isTitleAtom = atom<string[] | null>({
   default: null,
 });
 
-export const isExplanationAtom = atom<string[] | null>({
-  key: 'isExplanation',
+export const isExplainAtom = atom<string[] | null>({
+  key: 'isExplain',
   default: null,
 });

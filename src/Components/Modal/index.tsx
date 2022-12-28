@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
-import { isOpenModalAtom } from '../../Atoms/Atom';
+import { isOpenModalAtom } from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
 
 export default function Modal() {

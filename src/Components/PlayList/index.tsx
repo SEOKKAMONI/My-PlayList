@@ -6,9 +6,10 @@ interface PropsType {
   title: string;
   url: string;
   explain: string;
+  nickname: string;
 }
 
-export default function PlayList({ title, explain, url }: PropsType) {
+export default function PlayList({ title, explain, url, nickname }: PropsType) {
   return (
     <S.PlayList>
       <S.ImgBox>
@@ -18,7 +19,7 @@ export default function PlayList({ title, explain, url }: PropsType) {
       <S.Contents>
         <S.Title>{title}</S.Title>
         <S.SubTitle>{explain}</S.SubTitle>
-        <S.NickName>김석진</S.NickName>
+        <S.NickName>{nickname}</S.NickName>
       </S.Contents>
     </S.PlayList>
   );

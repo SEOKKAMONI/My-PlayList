@@ -13,7 +13,12 @@ export default function MainPage() {
         <Header />
         <S.Content>
           {ListData.map((d, index) => (
-            <PlayList title={d.title} explain={d.explain} url={d.url} />
+            <PlayList
+              title={d.title}
+              explain={d.explain}
+              url={d.url}
+              nickname={d.nickname}
+            />
           ))}
         </S.Content>
       </S.MainPage>

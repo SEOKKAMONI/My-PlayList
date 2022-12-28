@@ -10,6 +10,10 @@ export const PlayList = styled.div`
   padding: 10px 0px;
 `;
 
+export const Link = styled.a`
+  height: 85%;
+`;
+
 export const Shortcut = styled.span`
   position: absolute;
   top: 50%;

@@ -13,8 +13,10 @@ export default function PlayList({ title, explain, url, nickname }: PropsType) {
   return (
     <S.PlayList>
       <S.ImgBox>
-        <S.Shortcut>바로가기</S.Shortcut>
-        <S.Img src={Thumbnail} />
+        <S.Link href={url} target="_blank">
+          <S.Shortcut>바로가기</S.Shortcut>
+          <S.Img src={Thumbnail} />
+        </S.Link>
       </S.ImgBox>
       <S.Contents>
         <S.Title>{title}</S.Title>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const Frame = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid #3b28cc;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const Frame = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Form = styled.form`
 
 export const Input = styled.textarea`
   min-width: 100%;
-  padding: 0px 10px;
+  padding: 8px 10px;
   font-size: 14px;
   text-align: left;
 `;

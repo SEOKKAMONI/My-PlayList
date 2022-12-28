@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AddButton = styled.button`
+export const Button = styled.button`
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -16,7 +16,7 @@ export const AddButton = styled.button`
   font-weight: 500;
 `;
 
-export const ArrowImg = styled.img`
+export const Img = styled.img`
   width: 30px;
   height: 30px;
 `;

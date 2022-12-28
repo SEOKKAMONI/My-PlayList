@@ -3,8 +3,8 @@ import * as S from './style';
 
 export default function TextInput() {
   return (
-    <S.Form>
+    <S.Frame>
       <S.Input placeholder="텍스트 입력창" />
-    </S.Form>
+    </S.Frame>
   );
 }

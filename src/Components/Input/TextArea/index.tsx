@@ -3,8 +3,8 @@ import * as S from './style';
 
 export default function TextArea() {
   return (
-    <S.Form>
+    <S.Frame>
       <S.Input placeholder="노래에 대한 설명을 적든가 말든가" />
-    </S.Form>
+    </S.Frame>
   );
 }

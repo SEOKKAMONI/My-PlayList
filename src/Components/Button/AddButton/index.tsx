@@ -8,8 +8,8 @@ export default function AddButton() {
   const setOpenModal = useSetRecoilState<boolean>(isOpenModalAtom);
 
   return (
-    <S.AddButton onClick={() => setOpenModal(true)}>
-      <S.ArrowImg src={ArrowImg} />
-    </S.AddButton>
+    <S.Button onClick={() => setOpenModal(true)}>
+      <S.Img src={ArrowImg} />
+    </S.Button>
   );
 }

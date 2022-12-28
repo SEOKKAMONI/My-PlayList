@@ -3,6 +3,7 @@ import * as S from './style';
 import Header from './Header';
 import PlayList from '../PlayList/index';
 import Modal from '../Modal/index';
+import ListData from '../../Data/ListData.json';
 
 export default function MainPage() {
   return (
@@ -11,7 +12,9 @@ export default function MainPage() {
       <S.MainPage>
         <Header />
         <S.Content>
-          <PlayList />
+          {ListData.map((d, index) => (
+            <PlayList title={d.title} explain={d.explain} url={d.url} />
+          ))}
         </S.Content>
       </S.MainPage>
     </>

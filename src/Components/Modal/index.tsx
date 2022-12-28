@@ -1,9 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
-import * as D from '../../Atoms/ListDataAtom';
 import * as O from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
 
@@ -13,16 +12,12 @@ export default function Modal() {
   );
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  const setUrls = useSetRecoilState<string[] | null>(D.isUrlAtom);
-  const setTitles = useSetRecoilState<string[] | null>(D.isTitleAtom);
-  const setExplains = useSetRecoilState<string[] | null>(D.isExplainAtom);
-
   const [isUrl, setUrl] = useState<string>('');
   const [isTitle, setTitle] = useState<string>('');
   const [isExplain, setExplain] = useState<string>('');
 
   const BtnClickEvent = () => {
-    setUrls((currentArray) => [isUrl, ...currentArray]);
+    // 대충 투두 들어가는곳
   };
 
   return (

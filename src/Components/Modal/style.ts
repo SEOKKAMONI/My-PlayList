@@ -12,6 +12,7 @@ export const ModalBackground = styled.div<{ display: string }>`
 `;
 
 export const Modal = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +31,16 @@ export const Title = styled.p`
 
 export const Line = styled.div`
   margin: 12px 0px;
-  width: 90%;
+  width: 350px;
+
   border: 1px solid #3b28cc;
+`;
+
+export const Form = styled.form`
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 75%;
 `;

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useRecoilState } from 'recoil';
+import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import { isOpenModalAtom } from '../../Atoms/Atom';
@@ -21,10 +22,12 @@ export default function Modal() {
     >
       <S.Modal>
         <S.Title>플레이 리스트 추가</S.Title>
-        <S.Line />
-        <TextInput />
-        <TextInput />
-        <TextArea />
+        <S.Form>
+          <TextInput />
+          <TextInput />
+          <TextArea />
+          <SubmitButton />
+        </S.Form>
       </S.Modal>
     </S.ModalBackground>
   );

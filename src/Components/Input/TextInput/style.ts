@@ -6,6 +6,7 @@ export const Frame = styled.div`
   border-bottom: 2px solid #3b28cc;
   width: 350px;
   height: 35px;
+  margin: 20px 0px;
 `;
 
 export const Input = styled.input`

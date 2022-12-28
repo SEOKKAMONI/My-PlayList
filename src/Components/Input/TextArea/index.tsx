@@ -3,12 +3,16 @@ import * as S from './style';
 
 interface PropsType {
   placeholder: string;
+  setState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function TextArea({ placeholder }: PropsType) {
+export default function TextArea({ placeholder, setState }: PropsType) {
   return (
     <S.Frame>
-      <S.Input placeholder={placeholder} />
+      <S.Input
+        onChange={(e) => setState(e.target.value)}
+        placeholder={placeholder}
+      />
     </S.Frame>
   );
 }

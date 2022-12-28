@@ -1,16 +1,16 @@
 import { atom } from 'recoil';
 
 export const isUrlAtom = atom<string[] | null>({
-  key: 'isUrl',
+  key: 'isUrls',
   default: null,
 });
 
 export const isTitleAtom = atom<string[] | null>({
-  key: 'isTitle',
+  key: 'isTitles',
   default: null,
 });
 
 export const isExplainAtom = atom<string[] | null>({
-  key: 'isExplain',
+  key: 'isExplains',
   default: null,
 });

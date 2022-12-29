@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const PlayList = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 80%;
   height: 150px;
   border-bottom: 2px solid #3b28cc;
-  padding: 10px 0px;
+  padding: 14px 0px;
 `;
 
 export const Link = styled.a`
@@ -38,6 +39,7 @@ export const Img = styled.img`
 export const ImgBox = styled.div`
   position: relative;
   height: 85%;
+  margin-right: 12px;
   &:hover ${Shortcut} {
     opacity: 1;
   }
@@ -47,14 +49,14 @@ export const ImgBox = styled.div`
 `;
 
 export const Contents = styled.div`
-  position: relative;
-  max-height: 85%;
+  height: 85%;
   width: 100%;
   text-align: center;
 `;
 
 export const ContentsFrame = styled.div`
-  width: 350px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Title = styled.p`
@@ -75,7 +77,7 @@ export const SubTitle = styled.p`
 
 export const NickName = styled.p`
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   right: 0;
   text-align: right;
   font-size: 14px;

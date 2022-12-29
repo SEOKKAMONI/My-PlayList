@@ -36,8 +36,8 @@ export default function PlayList({ title, explain, url, name }: PropsType) {
         <S.ContentsFrame>
           <S.Title>{title}</S.Title>
           <S.SubTitle>{explain}</S.SubTitle>
+          <S.NickName>{name}</S.NickName>
         </S.ContentsFrame>
-        <S.NickName>{name}</S.NickName>
       </S.Contents>
     </S.PlayList>
   );

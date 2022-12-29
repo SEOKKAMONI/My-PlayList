@@ -10,7 +10,7 @@ export const Frame = styled.div`
   margin: 20px 0px;
 `;
 
-export const Input = styled.input`
+export const Input = styled.textarea`
   min-width: 100%;
   min-height: 100px;
   max-height: 200px;

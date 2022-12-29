@@ -11,12 +11,9 @@ export default function TextArea({ placeholder, setState, state }: PropsType) {
   return (
     <S.Frame>
       <S.Input
-        type="text"
         value={state}
         placeholder={placeholder}
-        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-          setState(e.currentTarget.value)
-        }
+        onChange={(e) => setState(e.currentTarget.value)}
       />
     </S.Frame>
   );

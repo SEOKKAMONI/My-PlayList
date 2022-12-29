@@ -13,9 +13,7 @@ export default function TextInput({ placeholder, setState, state }: PropsType) {
       <S.Input
         value={state}
         placeholder={placeholder}
-        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-          setState(e.currentTarget.value)
-        }
+        onChange={(e) => setState(e.currentTarget.value)}
       />
     </S.Frame>
   );

@@ -6,6 +6,7 @@
         "dom.iterable",
         "esnext"
       ],
+      "typeRoots": ["./node_modules/@types", "types"],
       "baseUrl": "./src",
       "allowJs": true,
       "skipLibCheck": true,
@@ -21,7 +22,5 @@
       "noEmit": true,
       "jsx": "react-jsx"
     },
-    "include": [
-      "src"
-, "src/App.tsx", "src/index.tsx"    ],
+    "include": ["src","src/App.tsx", "src/index.tsx" ,"custom.d.ts"],
 }

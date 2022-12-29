@@ -48,8 +48,8 @@ export const ImgBox = styled.div`
 
 export const Contents = styled.div`
   position: relative;
-  height: 85%;
-  width: 100%;
+  max-height: 85%;
+  max-width: 100%;
   text-align: center;
 `;
 

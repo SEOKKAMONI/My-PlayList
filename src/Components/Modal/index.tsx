@@ -1,4 +1,4 @@
-import React, { useRef, FormEventHandler, useState } from 'react';
+import React, { useRef, FormEventHandler, useState, useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
@@ -18,6 +18,10 @@ export default function Modal() {
     O.isOpenModalAtom,
   );
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    localStorage.setItem('DATA_LIST', JSON.stringify(A.isListData)); // local storage store
+  }, []);
 
   const BtnClickEvent: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();

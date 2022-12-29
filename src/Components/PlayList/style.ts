@@ -8,7 +8,7 @@ export const PlayList = styled.div`
   width: 80%;
   height: 150px;
   border-bottom: 2px solid #3b28cc;
-  padding: 14px 0px;
+  padding: 8px 0px;
 `;
 
 export const Link = styled.a`
@@ -76,8 +76,6 @@ export const SubTitle = styled.p`
 `;
 
 export const NickName = styled.p`
-  position: absolute;
-  bottom: 5px;
   right: 0;
   text-align: right;
   font-size: 14px;

@@ -1,23 +1,44 @@
-import React, { useRef, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import React, { useRef, FormEventHandler, useState } from 'react';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import * as O from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
+import * as A from '../../Atoms/isListDataAtom';
 
 export default function Modal() {
+  const [isUrl, setUrl] = useState<string>('');
+  const [isTitle, setTitle] = useState<string>('');
+  const [isExplain, setExplain] = useState<string>('');
+
+  const setListData = useSetRecoilState(A.isListData);
+
   const [isOpenModal, setOpenModal] = useRecoilState<boolean>(
     O.isOpenModalAtom,
   );
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  const [isUrl, setUrl] = useState<string>('');
-  const [isTitle, setTitle] = useState<string>('');
-  const [isExplain, setExplain] = useState<string>('');
+  const BtnClickEvent: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    if (isTitle === '' || isUrl === '' || isExplain === '') {
+      alert('필수 항목 중 안적으신게 있습니다 !!');
+      return;
+    }
+    setListData((listData) => [
+      ...listData,
+      {
+        title: isTitle,
+        url: isUrl,
+        explain: isExplain,
+        name: '김석진',
+      },
+    ]);
 
-  const BtnClickEvent = () => {
-    // 대충 투두 들어가는곳
+    setExplain('');
+    setTitle('');
+    setUrl('');
+    setOpenModal(false);
   };
 
   return (
@@ -32,20 +53,23 @@ export default function Modal() {
     >
       <S.Modal>
         <S.Title>플레이 리스트 추가</S.Title>
-        <S.Form>
+        <S.Form onSubmit={BtnClickEvent}>
           <TextInput
-            setState={() => setUrl}
+            setState={setUrl}
+            state={isUrl}
             placeholder="유튜브 URL을 입력하세요."
           />
           <TextInput
-            setState={() => setTitle}
+            setState={setTitle}
+            state={isTitle}
             placeholder="노래 제목을 입력해주세요."
           />
           <TextArea
-            setState={() => setExplain}
+            setState={setExplain}
+            state={isExplain}
             placeholder="간단하게 자신의 방법으로 노래를 설명해주세요."
           />
-          <SubmitButton onClick={() => BtnClickEvent} />
+          <SubmitButton />
         </S.Form>
       </S.Modal>
     </S.ModalBackground>

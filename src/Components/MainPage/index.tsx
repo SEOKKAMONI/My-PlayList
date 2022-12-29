@@ -4,7 +4,6 @@ import * as S from './style';
 import Header from './Header';
 import PlayList from '../PlayList/index';
 import Modal from '../Modal/index';
-import ListData from '../../Data/ListData.json';
 import * as A from '../../Atoms/isListDataAtom';
 
 export default function MainPage() {
@@ -16,7 +15,7 @@ export default function MainPage() {
       <S.MainPage>
         <Header />
         <S.Content>
-          {isListData.map((d, index) => (
+          {isListData.map((d) => (
             <PlayList
               title={d.title}
               explain={d.explain}

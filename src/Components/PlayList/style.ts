@@ -55,6 +55,7 @@ export const Contents = styled.div`
 `;
 
 export const ContentsFrame = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
 `;
@@ -75,9 +76,19 @@ export const SubTitle = styled.p`
   max-height: 90px;
 `;
 
-export const NickName = styled.p`
+export const NickName = styled.span`
+  position: absolute;
   right: 0;
-  text-align: right;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
+`;
+
+export const Delete = styled.a`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #f00;
 `;

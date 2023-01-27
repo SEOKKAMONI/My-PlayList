@@ -37,6 +37,7 @@ export default function PlayList({ title, explain, url, name }: PropsType) {
           <S.Title>{title}</S.Title>
           <S.SubTitle>{explain}</S.SubTitle>
           <S.NickName>{name}</S.NickName>
+          <S.Delete>삭제</S.Delete>
         </S.ContentsFrame>
       </S.Contents>
     </S.PlayList>

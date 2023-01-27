@@ -6,7 +6,6 @@ export const Frame = styled.div`
   justify-content: center;
   width: 350px;
   border: 2px solid #3b28cc;
-  border-radius: 8px;
   margin: 20px 0px;
 `;
 

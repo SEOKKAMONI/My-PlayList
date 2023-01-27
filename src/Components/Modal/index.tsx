@@ -65,7 +65,7 @@ export default function Modal() {
             onChange={onChange}
             placeholder="간단하게 자신의 방법으로 노래를 설명해주세요."
           />
-          <S.Button onClick={onClick} />
+          <S.Button onClick={onClick}>추가하기</S.Button>
         </S.Frame>
       </S.Modal>
     </S.ModalBackground>

@@ -36,11 +36,28 @@ export const Line = styled.div`
   border: 1px solid #3b28cc;
 `;
 
-export const Form = styled.form`
+export const Frame = styled.div`
   position: absolute;
   top: 80px;
   display: flex;
   flex-direction: column;
   align-content: center;
   height: 75%;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #3b28cc;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 12px;
+  color: #fff;
 `;

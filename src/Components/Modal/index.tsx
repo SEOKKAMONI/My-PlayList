@@ -1,13 +1,13 @@
-import React, { useRef, FormEventHandler, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import SubmitButton from '../Button/SubmitButton/index';
+import { PlayListType } from 'type/list.type';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import * as O from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
 
 export default function Modal() {
-  const [playList, setPlayList] = useState({
+  const [playList, setPlayList] = useState<PlayListType>({
     title: '',
     url: '',
     explain: '',
@@ -20,9 +20,7 @@ export default function Modal() {
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   // 버튼 클릭
-  const BtnClickEvent: FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
-
+  const onClick = () => {
     setOpenModal(false);
   };
 
@@ -46,7 +44,7 @@ export default function Modal() {
     >
       <S.Modal>
         <S.Title>플레이 리스트 추가</S.Title>
-        <S.Form onSubmit={BtnClickEvent}>
+        <S.Frame>
           <TextInput
             name="url"
             onChange={onChange}
@@ -62,8 +60,8 @@ export default function Modal() {
             onChange={onChange}
             placeholder="간단하게 자신의 방법으로 노래를 설명해주세요."
           />
-          <SubmitButton />
-        </S.Form>
+          <S.Button onClick={onClick} />
+        </S.Frame>
       </S.Modal>
     </S.ModalBackground>
   );

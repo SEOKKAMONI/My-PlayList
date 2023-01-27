@@ -1,4 +1,4 @@
-export interface ItemDataType {
+export interface PlayListType {
   title: string;
   url: string;
   explain: string;

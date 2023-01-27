@@ -1,11 +1,10 @@
 import { atom } from 'recoil';
-import { getListStorage } from 'shared/storage/storage';
 import { PlayListType } from 'type/list.type';
 
 const localStorageEffect =
   (key: string) =>
   ({ setSelf, onSet }: any) => {
-    const savedValue = getListStorage();
+    const savedValue = localStorage.getItem('list-data');
     if (savedValue !== null) {
       setSelf(JSON.parse(savedValue));
     }
@@ -14,26 +13,6 @@ const localStorageEffect =
 export const playListsAtom = atom<PlayListType[]>({
   key: 'lists',
   // 임의 데이터
-  default: [
-    {
-      id: 0,
-      title: '',
-      url: '',
-      explain: '',
-      name: '',
-    },
-  ],
+  default: [],
   effects_UNSTABLE: [localStorageEffect('list-data')],
-});
-
-export const playListAtom = atom<PlayListType>({
-  key: 'list',
-  // 임의 데이터
-  default: {
-    id: 0,
-    title: '',
-    url: '',
-    explain: '',
-    name: '',
-  },
 });

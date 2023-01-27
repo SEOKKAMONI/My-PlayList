@@ -1,13 +1,7 @@
 import { atom } from 'recoil';
+import { ItemDataType } from 'type/list.type';
 
-export interface ListDataTypes {
-  title: string;
-  url: string;
-  explain: string;
-  name: string;
-}
-
-export const isListData = atom<ListDataTypes[]>({
+export const isListData = atom<ItemDataType[]>({
   key: 'list',
   // 임의 데이터
   default: [],

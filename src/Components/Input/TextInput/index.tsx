@@ -3,18 +3,14 @@ import * as S from './style';
 
 interface PropsType {
   placeholder: string;
-  setState: React.Dispatch<React.SetStateAction<string>>;
-  state: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  name: string;
 }
 
-export default function TextInput({ placeholder, setState, state }: PropsType) {
+export default function TextInput({ placeholder, name, onChange }: PropsType) {
   return (
     <S.Frame>
-      <S.Input
-        value={state}
-        placeholder={placeholder}
-        onChange={(e) => setState(e.currentTarget.value)}
-      />
+      <S.Input name={name} placeholder={placeholder} onChange={onChange} />
     </S.Frame>
   );
 }

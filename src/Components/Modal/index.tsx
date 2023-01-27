@@ -1,48 +1,35 @@
 import React, { useRef, FormEventHandler, useState, useEffect } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import * as O from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
-import * as A from '../../Atoms/isListDataAtom';
 
 export default function Modal() {
-  const [isUrl, setUrl] = useState<string>('');
-  const [isTitle, setTitle] = useState<string>('');
-  const [isExplain, setExplain] = useState<string>('');
-
-  const setListData = useSetRecoilState(A.isListData);
-
+  const [playList, setPlayList] = useState({
+    title: '',
+    url: '',
+    explain: '',
+    name: '',
+  });
+  // 모달
   const [isOpenModal, setOpenModal] = useRecoilState<boolean>(
     O.isOpenModalAtom,
   );
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  useEffect(() => {
-    localStorage.setItem('DATA_LIST', JSON.stringify(A.isListData)); // local storage store
-  }, []);
-
+  // 버튼 클릭
   const BtnClickEvent: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    if (isTitle === '' || isUrl === '' || isExplain === '') {
-      alert('필수 항목 중 안적으신게 있습니다 !!');
-      return;
-    }
-    setListData((listData) => [
-      ...listData,
-      {
-        title: isTitle,
-        url: isUrl,
-        explain: isExplain,
-        name: '김석진',
-      },
-    ]);
 
-    setExplain('');
-    setTitle('');
-    setUrl('');
     setOpenModal(false);
+  };
+
+  // onChange
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPlayList({ ...playList, [name]: value });
   };
 
   return (
@@ -59,18 +46,18 @@ export default function Modal() {
         <S.Title>플레이 리스트 추가</S.Title>
         <S.Form onSubmit={BtnClickEvent}>
           <TextInput
-            setState={setUrl}
-            state={isUrl}
+            name="url"
+            onChange={onChange}
             placeholder="유튜브 URL을 입력하세요."
           />
           <TextInput
-            setState={setTitle}
-            state={isTitle}
+            name="title"
+            onChange={onChange}
             placeholder="노래 제목을 입력해주세요."
           />
-          <TextArea
-            setState={setExplain}
-            state={isExplain}
+          <TextInput
+            name="explain"
+            onChange={onChange}
             placeholder="간단하게 자신의 방법으로 노래를 설명해주세요."
           />
           <SubmitButton />

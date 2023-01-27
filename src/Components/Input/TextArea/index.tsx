@@ -2,19 +2,15 @@ import React from 'react';
 import * as S from './style';
 
 interface PropsType {
+  name: string;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
   placeholder: string;
-  setState: React.Dispatch<React.SetStateAction<string>>;
-  state: string;
 }
 
-export default function TextArea({ placeholder, setState, state }: PropsType) {
+export default function TextArea({ placeholder, onChange, name }: PropsType) {
   return (
     <S.Frame>
-      <S.Input
-        value={state}
-        placeholder={placeholder}
-        onChange={(e) => setState(e.currentTarget.value)}
-      />
+      <S.Input name={name} placeholder={placeholder} onChange={onChange} />
     </S.Frame>
   );
 }

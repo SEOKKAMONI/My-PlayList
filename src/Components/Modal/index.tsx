@@ -1,4 +1,4 @@
-import React, { useRef, FormEventHandler, useState, useEffect } from 'react';
+import React, { useRef, FormEventHandler, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import SubmitButton from '../Button/SubmitButton/index';
 import TextArea from '../Input/TextArea/index';
@@ -27,7 +27,9 @@ export default function Modal() {
   };
 
   // onChange
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setPlayList({ ...playList, [name]: value });
   };
@@ -55,7 +57,7 @@ export default function Modal() {
             onChange={onChange}
             placeholder="노래 제목을 입력해주세요."
           />
-          <TextInput
+          <TextArea
             name="explain"
             onChange={onChange}
             placeholder="간단하게 자신의 방법으로 노래를 설명해주세요."

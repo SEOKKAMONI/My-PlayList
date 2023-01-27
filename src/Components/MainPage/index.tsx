@@ -25,7 +25,7 @@ export default function MainPage() {
                 title={d.title}
                 explain={d.explain}
                 url={d.url}
-                name="김석진"
+                name={d.name}
               />
             ))}
         </S.Content>

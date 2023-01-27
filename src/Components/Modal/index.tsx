@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { PlayListType } from 'type/list.type';
 import { playListsAtom } from 'Atoms/isListDataAtom';
@@ -20,7 +20,7 @@ export default function Modal() {
     title: '',
     url: '',
     explain: '',
-    name: '김석진',
+    name: '',
   });
 
   // 모달 외 다른곳을 클릭했을때
@@ -28,12 +28,14 @@ export default function Modal() {
 
   // 버튼 클릭
   const onClick = () => {
-    const nextId: number =
-      playLists.length > 0 ? playLists[playLists.length - 1].id + 1 : 0;
     console.log(playLists.length);
-    setPlayList({ ...playList, id: nextId });
-
+    if (playLists.length !== 0) {
+      console.log('hi');
+      const nextId: number = playLists[playLists.length - 1].id + 1;
+      setPlayList({ ...playList, id: nextId });
+    }
     setPlayLists([...playLists, playList]);
+    console.log(playList);
     setOpenModal(false);
   };
 
@@ -59,6 +61,11 @@ export default function Modal() {
       <S.Modal>
         <S.Title>플레이 리스트 추가</S.Title>
         <S.Frame>
+          <TextInput
+            name="name"
+            onChange={onChange}
+            placeholder="이름을 입력하세요."
+          />
           <TextInput
             name="url"
             onChange={onChange}

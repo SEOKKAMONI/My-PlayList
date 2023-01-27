@@ -14,5 +14,5 @@ export const playListsAtom = atom<PlayListType[]>({
   key: 'lists',
   // 임의 데이터
   default: [],
-  effects_UNSTABLE: [localStorageEffect('list-data')],
+  effects: [localStorageEffect('list-data')],
 });

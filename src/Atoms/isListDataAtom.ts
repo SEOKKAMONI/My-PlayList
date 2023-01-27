@@ -9,18 +9,21 @@ const localStorageEffect =
     if (savedValue !== null) {
       setSelf(JSON.parse(savedValue));
     }
-    onSet(({ newValue, _ }: any, isReset: boolean) =>
-      isReset
-        ? localStorage.removeItem(key)
-        : localStorage.setItem(key, JSON.stringify(newValue)),
-    );
   };
 
 export const playListsAtom = atom<PlayListType[]>({
   key: 'lists',
   // 임의 데이터
-  default: [],
-  effects: [localStorageEffect('list-data')],
+  default: [
+    {
+      id: 0,
+      title: '',
+      url: '',
+      explain: '',
+      name: '',
+    },
+  ],
+  effects_UNSTABLE: [localStorageEffect('list-data')],
 });
 
 export const playListAtom = atom<PlayListType>({

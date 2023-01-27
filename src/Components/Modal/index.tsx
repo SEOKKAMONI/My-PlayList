@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilState } from 'recoil';
 import { PlayListType } from 'type/list.type';
+import { playListAtom } from 'Atoms/isListDataAtom';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import * as O from '../../Atoms/isOpenAtom';
@@ -13,14 +14,18 @@ export default function Modal() {
     explain: '',
     name: '',
   });
-  // 모달
+  // atom
   const [isOpenModal, setOpenModal] = useRecoilState<boolean>(
     O.isOpenModalAtom,
   );
+  const [playLists, setPlayLists] = useRecoilState(playListAtom);
+
+  // 모달 외 다른곳을 클릭했을때
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   // 버튼 클릭
   const onClick = () => {
+    setPlayLists([...playLists, playList]);
     setOpenModal(false);
   };
 

@@ -1,24 +1,20 @@
 import React, { useRef, useState } from 'react';
-import { useSetRecoilState, useRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { PlayListType } from 'type/list.type';
-import { playListAtom } from 'Atoms/isListDataAtom';
+import { playListsAtom, playListAtom } from 'Atoms/isListDataAtom';
 import TextArea from '../Input/TextArea/index';
 import * as S from './style';
 import * as O from '../../Atoms/isOpenAtom';
 import TextInput from '../Input/TextInput/index';
 
 export default function Modal() {
-  const [playList, setPlayList] = useState<PlayListType>({
-    title: '',
-    url: '',
-    explain: '',
-    name: '',
-  });
   // atom
   const [isOpenModal, setOpenModal] = useRecoilState<boolean>(
     O.isOpenModalAtom,
   );
-  const [playLists, setPlayLists] = useRecoilState(playListAtom);
+  const [playLists, setPlayLists] =
+    useRecoilState<PlayListType[]>(playListsAtom);
+  const [playList, setPlayList] = useRecoilState<PlayListType>(playListAtom);
 
   // 모달 외 다른곳을 클릭했을때
   const outSection = useRef() as React.MutableRefObject<HTMLInputElement>;

@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { PlayListType } from 'type/list.type';
 import { useRecoilValue } from 'recoil';
-import { playListAtom } from 'Atoms/isListDataAtom';
+import { playListsAtom } from 'Atoms/isListDataAtom';
+import { setListStorage } from 'shared/storage/storage';
 import * as S from './style';
 import Header from './Header';
 import PlayList from '../PlayList/index';
 import Modal from '../Modal/index';
 
 export default function MainPage() {
-  const playLists = useRecoilValue<PlayListType[]>(playListAtom);
+  const playLists = useRecoilValue<PlayListType[]>(playListsAtom);
+  setListStorage(JSON.stringify(playLists));
 
   return (
     <>
